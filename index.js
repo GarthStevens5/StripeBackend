@@ -21,6 +21,8 @@ app.get('/', (req, res) => {
 });
 
 app.post('/accept-payment', (req, res) => {
+  console.log(process.env.STRIPE_SECRET_KEY);
+  
   const token = req.body.stripeToken;
   const amount = req.body.amount;
 
